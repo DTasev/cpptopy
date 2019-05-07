@@ -2,19 +2,19 @@ CC=g++
 CFLAGS=-Wall -std=c++0x -fpic
 
 PYTHON_LIBRARIES := -lpython2.7 -lboost_python
-INLCUDES := -I/usr/include/python2.7/ -I/usr/include/ -I../
+INLCUDES := -I/usr/include/python2.7/ -I/usr/include/ -I../../
 LIB_DIRS := -L/usr/lib
 LIBS := -lpython2.7 -lboost_python
 
 all: main
 
 liblodepng:
-	$(CC) $(CFLAGS) $(INLCUDES) -c ../libs/lodepng.cpp
+	$(CC) $(CFLAGS) $(INLCUDES) -c ../../libs/lodepng.cpp
 	$(CC) -shared -o liblodepng.so lodepng.o
 
 CLASS_FILENAME := png_reader
 CLASS_PYTHON_LIBNAME := png_reader
-PACKAGE_DIR := /home/dtasev/dev/cpptopy/class
+PACKAGE_DIR := /home/dtasev/dev/cpptopy/boost/class
 
 main: liblodepng
 	$(MAKE) liblodepng

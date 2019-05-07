@@ -12,11 +12,11 @@ all: main
 FILENAME :=hello
 PYTHON_LIBNAME := hello_ext
 
-main: single_file
-	cd single_file; $(MAKE)
+main: boost/single_file
+	cd boost/single_file; $(MAKE)
 
-using_class: class
-	cd class; $(MAKE)
+class: boost/class
+	cd boost/class; $(MAKE)
 
 clean:
 	-rm *.so
