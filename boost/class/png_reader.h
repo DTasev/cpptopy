@@ -11,7 +11,8 @@
 // Example 1
 // Decode from disk to raw pixels with a single function call
 
-struct World {
+class World {
+public:
   void set(std::string msg) { this->msg = msg; }
   std::string greet() { return msg; }
   std::string msg;

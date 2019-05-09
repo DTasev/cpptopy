@@ -1,0 +1,3 @@
+target = png_reader
+sources = sippng_readercmodule.cpp sippng_readerWorld.cpp
+headers = sipAPIpng_reader.h

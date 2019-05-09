@@ -1,4 +1,4 @@
-CC=g++
+CXX=g++
 CFLAGS=-Wall -std=c++0x -fpic
 
 PYTHON_LIBRARIES := -lpython2.7 -lboost_python
@@ -12,8 +12,8 @@ FILENAME := hello
 PYTHON_LIBNAME := hello_ext
 
 main: $(FILENAME).cpp
-	$(CC) $(CFLAGS) $(INLCUDES) -c $(FILENAME).cpp
-	$(CC) -shared -o $(PYTHON_LIBNAME).so $(FILENAME).o $(LIB_DIRS) $(LIBS)
+	$(CXX) $(CFLAGS) $(INLCUDES) -c $(FILENAME).cpp
+	$(CXX) -shared -o $(PYTHON_LIBNAME).so $(FILENAME).o $(LIB_DIRS) $(LIBS)
 	python run.py
 
 clean:
