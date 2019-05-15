@@ -1,15 +1,15 @@
 TARGET = png_reader.so
-OFILES = sippng_readercmodule.o sippng_readerWorld.o
+OFILES = sippng_readercmodule.o sippng_readerstdstring.o sippng_readerWorld.o
 HFILES = sipAPIpng_reader.h 
 
 CC = gcc
 CXX = g++
 LINK = g++
 CPPFLAGS = -DNDEBUG -I. -I/usr/include/python2.7
-CFLAGS = -std=c++11 -I/home/dtasev/dev/cpptopy/libs -I/usr/include/x86_64-linux-gnu/qt5/ -I/usr/include/x86_64-linux-gnu/qt5//QtCore -I/usr/include/x86_64-linux-gnu/qt5//QtGui  -g -O2 -fdebug-prefix-map=/build/sip4-6EjBPW/sip4-4.19.7+dfsg=. -fstack-protector-strong -Wformat -Werror=format-security  -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Wall -W
-CXXFLAGS = -std=c++11 -I/home/dtasev/dev/cpptopy/libs -I/usr/include/x86_64-linux-gnu/qt5/ -I/usr/include/x86_64-linux-gnu/qt5//QtCore -I/usr/include/x86_64-linux-gnu/qt5//QtGui  -g -O2 -fdebug-prefix-map=/build/sip4-6EjBPW/sip4-4.19.7+dfsg=. -fstack-protector-strong -Wformat -Werror=format-security  -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Wall -W
+CFLAGS = -std=c++11 -I/home/dtasev/dev/cpptopy/libs -I/usr/include/x86_64-linux-gnu/qt5/ -I/usr/include/x86_64-linux-gnu/qt5//QtCore  -g -O2 -fdebug-prefix-map=/build/sip4-6EjBPW/sip4-4.19.7+dfsg=. -fstack-protector-strong -Wformat -Werror=format-security  -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Wall -W
+CXXFLAGS = -std=c++11 -I/home/dtasev/dev/cpptopy/libs -I/usr/include/x86_64-linux-gnu/qt5/ -I/usr/include/x86_64-linux-gnu/qt5//QtCore  -g -O2 -fdebug-prefix-map=/build/sip4-6EjBPW/sip4-4.19.7+dfsg=. -fstack-protector-strong -Wformat -Werror=format-security  -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Wall -W
 LFLAGS =  -Wl,-Bsymbolic-functions -Wl,-z,relro -shared -Wl,-rpath,/home/dtasev/dev/cpptopy/sip/src -Wl,-rpath,/home/dtasev/dev/cpptopy/libs -Wl,--version-script=png_reader.exp
-LIBS = -L/home/dtasev/dev/cpptopy/sip/src -L/home/dtasev/dev/cpptopy/libs
+LIBS = -L/home/dtasev/dev/cpptopy/sip/src -L/home/dtasev/dev/cpptopy/libs -llodepng
 .SUFFIXES: .c .o .cpp .cc .cxx .C
 
 
@@ -43,5 +43,6 @@ install: $(TARGET)
 clean:
 	-rm -f $(TARGET)
 	-rm -f sippng_readercmodule.o
+	-rm -f sippng_readerstdstring.o
 	-rm -f sippng_readerWorld.o
 	-rm -f png_reader.exp

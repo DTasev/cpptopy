@@ -6,12 +6,13 @@
 
 #include "sipAPIpng_reader.h"
 
-#line 6 "png_reader.sip"
+#line 7 "png_reader.sip"
   #include <../src/png_reader.h>
 #line 12 "./sippng_readercmodule.cpp"
 
 /* Define the strings used by this module. */
 const char sipStrings_png_reader[] = {
+    's', 't', 'd', ':', ':', 's', 't', 'r', 'i', 'n', 'g', 0,
     'p', 'n', 'g', '_', 'r', 'e', 'a', 'd', 'e', 'r', 0,
     'd', 'i', 'r', 'e', 'c', 't', 'o', 'r', 'y', 0,
     'p', 'r', 'e', 'c', 'i', 's', 'i', 'o', 'n', 0,
@@ -53,6 +54,7 @@ const char sipStrings_png_reader[] = {
  */
 sipTypeDef *sipExportedTypes_png_reader[] = {
     &sipTypeDef_png_reader_World.ctd_base,
+    &sipTypeDef_png_reader_std_string.mtd_base,
 };
 
 
@@ -79,7 +81,7 @@ sipExportedModuleDef sipModuleAPI_png_reader = {
     sipStrings_png_reader,
     importsTable,
     NULL,
-    1,
+    2,
     sipExportedTypes_png_reader,
     NULL,
     0,

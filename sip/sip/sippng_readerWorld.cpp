@@ -6,7 +6,7 @@
 
 #include "sipAPIpng_reader.h"
 
-#line 6 "png_reader.sip"
+#line 7 "png_reader.sip"
   #include <../src/png_reader.h>
 #line 12 "./sippng_readerWorld.cpp"
 
@@ -21,12 +21,14 @@ static PyObject *meth_World_set(PyObject *sipSelf, PyObject *sipArgs)
     PyObject *sipParseErr = NULL;
 
     {
-        const char* a0;
+        const  ::QString* a0;
+        int a0State = 0;
          ::World *sipCpp;
 
-        if (sipParseArgs(&sipParseErr, sipArgs, "Bs", &sipSelf, sipType_World, &sipCpp, &a0))
+        if (sipParseArgs(&sipParseErr, sipArgs, "BJ1", &sipSelf, sipType_World, &sipCpp, sipType_QString,&a0, &a0State))
         {
-            sipCpp->set(a0);
+            sipCpp->set(*a0);
+            sipReleaseType(const_cast< ::QString *>(a0),sipType_QString,a0State);
 
             Py_INCREF(Py_None);
             return Py_None;
