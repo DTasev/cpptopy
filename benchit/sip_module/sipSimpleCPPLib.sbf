@@ -1,0 +1,3 @@
+target = sipSimpleCPPLib
+sources = sipsipSimpleCPPLibcmodule.cpp sipsipSimpleCPPLibSomeCPPClass.cpp
+headers = sipAPIsipSimpleCPPLib.h

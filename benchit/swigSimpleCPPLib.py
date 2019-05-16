@@ -104,6 +104,9 @@ class SomeCPPClass(_object):
 
     def setX(self, xx):
         return _swigSimpleCPPLib.SomeCPPClass_setX(self, xx)
+
+    def doSetX(self, times):
+        return _swigSimpleCPPLib.SomeCPPClass_doSetX(self, times)
     __swig_setmethods__["x"] = _swigSimpleCPPLib.SomeCPPClass_x_set
     __swig_getmethods__["x"] = _swigSimpleCPPLib.SomeCPPClass_x_get
     if _newclass:

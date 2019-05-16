@@ -4,5 +4,7 @@
 using namespace boost::python;
 
 BOOST_PYTHON_MODULE(boostSimpleCPPLib) {
-  class_<SomeCPPClass>("SomeCPPClass").def("setX", &SomeCPPClass::setX);
+  class_<SomeCPPClass>("SomeCPPClass")
+      .def("setX", &SomeCPPClass::setX)
+      .def("doSetX", &SomeCPPClass::doSetX);
 }

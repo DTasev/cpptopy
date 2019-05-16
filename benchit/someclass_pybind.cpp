@@ -6,5 +6,6 @@ namespace py = pybind11;
 PYBIND11_MODULE(pybindSimpleCPPLib, m) {
   py::class_<SomeCPPClass>(m, "SomeCPPClass")
       .def(py::init<>())
-      .def("setX", &SomeCPPClass::setX);
+      .def("setX", &SomeCPPClass::setX)
+      .def("doSetX", &SomeCPPClass::doSetX);
 }
